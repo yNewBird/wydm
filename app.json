@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/displayData/displayData",
+    "pages/search/search",
+    "pages/onlinetest/onlinetest",
+    "pages/collection/collection",
+    "pages/personaltest/personaltest",
+    "pages/callPage/callpage",
+    "pages/myInfo/myInfo",
+    "pages/postHomePage/postHomePage",
+    "pages/questionPage/questionPage"
+  ],
+  "window":{
+    "backgroundTextStyle":"light", 
+    "navigationBarBackgroundColor": "#ff0",
+    "navigationBarTitleText": "个人测试",    
+    "navigationBarTextStyle":"black",
+    "backgroundColor":" #ffffb3"
+  },
+  "tabBar":{
+    "list":[{
+      "pagePath":"pages/index/index",
+      "text":"首页"
+    },{
+    "pagePath":"pages/myInfo/myInfo",
+    "text":"我的"
+    }]
+  },
+  "networkTimeout":{
+    "request":1000,
+    "downloadFile":10000
+  },
+  "debug":true
+}

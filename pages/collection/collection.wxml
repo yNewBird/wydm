@@ -1,0 +1,6 @@
+
+<view class="items" >
+      <label class="items" wx:for="{{collectionID}}">
+       <text>{{collectionID[index]}}</text>
+      </label>
+</view>

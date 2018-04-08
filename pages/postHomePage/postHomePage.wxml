@@ -1,0 +1,51 @@
+<!--pages/postHomePage/postHomePage.wxml-->
+<view class="weui-search-bar" bindtap="navigateToSearch">   
+  <view class="weui-search-bar__form">     
+    <view class="weui-search-bar__box">        
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>        
+      <input type="text" class="weui-search-bar__input" placeholder="请输入规范中文关键字"  value="{{searchValue}}" />        
+      <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">          
+      <icon type="clear" size="14"></icon>        
+      </view>
+    </view>   
+  </view>  
+</view>
+<!--button bindtap="testBtnClick">testButton</button-->
+<view class="page">
+    <view class="page__bd">
+        
+        <view class="weui-panel__hd">最新讨论</view>
+        
+        <view class="weui-cells weui-cells_after-title" >
+            <view class="weui-cell" wx:for="{{postArray}}" wx:key="postId" wx:for-index="key" id="{{item.postId}}" bindtap="postItemClick" wx:if="{{item.hotFlag==0}}">
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;" >
+                    <image src="../img/0-1.png" style="width: 50px; height: 50px; display: block"/>
+                    <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">{{item.postReplyArray.length}}</view>
+                </view>
+                <view class="weui-cell__bd" >
+                    <view>{{userArray[item.postUserId].userName}}({{userArray[item.postUserId].userCom}})</view>
+                    <view style="font-size: 13px;color: #888888;">{{item.postTitle}}</view>
+                </view>
+            </view>
+  
+        </view>
+        <view class="weui-panel__hd">热门讨论</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell" wx:for="{{postArray}}" wx:key="postId" wx:for-index="key" id="{{item.postId}}" bindtap="postItemClick" wx:if="{{item.hotFlag==1}}">
+                
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;" >
+                    <image src="../img/0-2.png" style="width: 50px; height: 50px; display: block"/>
+                    <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">{{item.postReplyArray.length}}</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{userArray[item.postUserId].userName}}({{userArray[item.postUserId].userCom}})</view>
+                    <view style="font-size: 13px;color: #888888;">{{item.postTitle}}</view>
+                </view>
+                
+            </view>
+        </view>
+
+    </view>
+    
+</view>
+

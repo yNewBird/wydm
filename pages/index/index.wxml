@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="userinfo">
+    <text >网优大妈</text>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+
+    </block>
+  </view>
+
+  
+  <view class="columnFlex">
+    <button class="button" bindtap='searchBtn'>
+      <view class="buttonFlex">
+        <image src="../img/search.png" style="width:30px;height:30px"></image>
+        <text>参数小词典</text>
+      </view>
+      <text class="buttonText">足不出户，便知网优那些事儿</text>
+    </button>
+    
+
+    <button class="button" bindtap="questionAnswerBtn">
+      <view class="buttonFlex">
+         <image src="../img/coffee.png" style="width:30px;height:30px"></image>
+         <text>网优随便答</text>
+      </view>
+      <text class="buttonText">你问我答，答不上来算我输</text>
+    </button>
+ 
+    <button class="button" bindtap='pkBtn'>
+      <view class="buttonFlex">
+         <image src="../img/pk.png" style="width:30px;height:30px"></image>
+          <text>石头剪刀布</text>
+      </view>
+      <text class="buttonText">有单你就来</text>
+      </button>
+  </view>
+
+ </view>
