@@ -13,6 +13,7 @@ Page({
       isShowToast: false,
       toastTime:2000,
       toastText:"回复不能为空",
+      searchFlag:false,
   },
   bindAnserAreaInput:function(e){
     this.setData({answer:e.detail.value});
@@ -46,7 +47,7 @@ Page({
     _this.data.toastTime = parseInt(aToastTime) ? parseInt(aToastTime) : 2000;
     // 显示toast  
     _this.setData({
-      isShowToast: true,toastText:info
+      isShowToast: true,toastText:info 
     });
     // console.log("showToast:"+this.data.isShowToast);
     // 定时器关闭  
@@ -57,7 +58,7 @@ Page({
     }, 3000);
   },  
   replyClick:function(e){
-    var answerTrim = this.trimStr(this.data.answer);
+      var answerTrim = this.trimStr(this.data.answer);
       if(answerTrim==""){
           
           //this.setData({ toastTime: 1500, });
@@ -103,6 +104,11 @@ Page({
       var pages=getCurrentPages();
       var prePage = pages[pages.length-2];
       prePage.setData({ postArray: tmpPostArr, replyArray: allReplyArr});
+      if (this.data.searchFlag) {
+        var postHomePage = pages[pages.length - 3];
+        postHomePage.setData({ postArray: tmpPostArr, replyArray: allReplyArr });
+        
+      }
       this.showToast(1000, "回复成功");
   },
   replyClick2: function (e) {
@@ -133,6 +139,9 @@ Page({
       //console.log(json);
       //console.log("hello");
       this.setData({ userArray:userArr,postData: json["postData"], replyArray: json["replyArray"]});
+      if(json.hasOwnProperty("searchFlag")){
+          this.setData({searchFlag:json["searchFlag"]});
+      }
       //this.setData({  });
       var tmpPostUserId = this.data.postData["postUserId"];
       console.log("userId:"+tmpPostUserId);
@@ -141,7 +150,7 @@ Page({
           if (tmpPostUserId == this.data.userArray[i].userId){
               //console.log("userId:" + tmpPostUserId);
               this.setData({ postUser: this.data.userArray[i]});
-                break;
+              break;
           }
       }
       this.setData({isShowToast:false});

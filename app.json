@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/displayData/displayData",
     "pages/search/search",
@@ -9,27 +9,34 @@
     "pages/callPage/callpage",
     "pages/myInfo/myInfo",
     "pages/postHomePage/postHomePage",
-    "pages/questionPage/questionPage"
+    "pages/questionPage/questionPage",
+    "pages/raiseQuestion/raiseQuestion",
+    "pages/allQuestions/allQuestions",
+    "pages/searchQuestion/searchQuestion",
+    "pages/addItem/addItem"
   ],
-  "window":{
-    "backgroundTextStyle":"light", 
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ff0",
-    "navigationBarTitleText": "个人测试",    
-    "navigationBarTextStyle":"black",
-    "backgroundColor":" #ffffb3"
+    "navigationBarTitleText": "个人测试",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": " #ffffb3"
   },
-  "tabBar":{
-    "list":[{
-      "pagePath":"pages/index/index",
-      "text":"首页"
-    },{
-    "pagePath":"pages/myInfo/myInfo",
-    "text":"我的"
-    }]
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/myInfo/myInfo",
+        "text": "我的"
+      }
+    ]
   },
-  "networkTimeout":{
-    "request":1000,
-    "downloadFile":10000
+  "networkTimeout": {
+    "request": 1000,
+    "downloadFile": 10000
   },
-  "debug":true
+  "debug": true
 }

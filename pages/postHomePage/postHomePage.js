@@ -10,7 +10,7 @@ Page({
           { postId: "0", postTitle: "什么是RSRP", postContent: "MRO中的RSRP含义是什么？", postUserId: "0", postTime: "2017/1/1 19:30", hotFlag: "0", postReplyArray: [0, 1, 2, 3, 4] },
           { postId: "1", postTitle: "什么是RSRQ", postContent: "MRO中的RSRQ含义是什么？", postUserId: "1", postTime: "2017/1/2 19:30", hotFlag: "0", postReplyArray: [5, 6, 7, 8, 9] },
           { postId: "2", postTitle: "什么是AOA", postContent: "在MRO测量报告中，AOA代表什么", postUserId: "2", postTime: "2017/1/3 19:30", hotFlag: "0", postReplyArray: [10, 11, 12, 13, 14] },
-          { postId: "3", postTitle: "什么是TA", postContent: "在实际测量报告中，AOA表示什么", postUserId: "3", postTime: "2017/1/4 19:30", hotFlag: "0", postReplyArray: [15, 15, 15, 15, 15] },
+          { postId: "3", postTitle: "什么是TA", postContent: "在实际测量报告中，AOA表示什么", postUserId: "3", postTime: "2017/1/4 19:30", hotFlag: "0", postReplyArray: [15, 16, 17, 18, 19] },
           { postId: "4", postTitle: "CI和ENBID转换关系是什么", postContent: "如题。CI如何转换为ENBID", postUserId: "4", postTime: "2017/1/5 19:30", hotFlag: "0", postReplyArray: [20, 21, 22, 23, 24] },
           { postId: "5", postTitle: "拨打号码不存在", postContent: "用移动volte几年了，至今还有这样的问题，偶尔打对方手机会提示你拨打的号码不存在，然而用GSM拨打或其他电联卡拨打又是正常的，有甚者在某基站下，根本不能发起volte呼叫，几声盲音就断线了，有几次通话中突然无4G，也不回落GSM，就这样莫名其妙断线。不过总体还是有进步，以前volte初期那种通话断断续续还带点金属音没有了。 ", postUserId: "5", postTime: "2017/1/6 19:30", hotFlag: "1", postReplyArray: [25, 26, 27, 28, 29] },
           { postId: "6", postTitle: "什么指令可以开通电信VOLTE", postContent: "如题。", postUserId: "6", postTime: "2017/1/7 19:30", hotFlag: "1", postReplyArray: [30, 31, 32, 33, 34] },
@@ -98,6 +98,15 @@ Page({
       return;
     }
     console.log(allReplyArr);
+  },
+  raiseQuestionBtn:function(){
+    wx.navigateTo({ url:"../raiseQuestion/raiseQuestion",});
+  },
+  allQuestionBtn:function(){
+    wx.navigateTo({url:"../allQuestions/allQuestions",});
+  },
+  navigateToSearchQuestion:function(){
+    wx.navigateTo({url:"../searchQuestion/searchQuestion"});
   },
   postItemClick: function (e) {
     var postIndex = e.currentTarget.id;

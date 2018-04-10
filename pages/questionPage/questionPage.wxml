@@ -33,7 +33,7 @@
                         <view class="weui-media-box__title weui-media-box__title_in-text">{{userArray[item.replyUserId].userName}} 回复#{{index}}</view>
                         <view class="weui-media-box__desc">{{item.replyContent}}</view>
                         <view class="weui-media-box__info">
-                            <view class="weui-media-box__info__meta">{{userArray[item.replyUserId].userName}}</view>
+                            <!--view class="weui-media-box__info__meta">{{userArray[item.replyUserId].userName}}</view-->
                             <view class="weui-media-box__info__meta">{{item.replyTime}}</view>
                             <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{postUser.userCom}}</view>
                         </view>
